@@ -3,7 +3,7 @@ const categoryModel = require("../model/categorySchema")
 const category = {
   async list(req, res) {
     try {
-      let data = await categoryModel.find({}).limit(100000)
+      let data = await categoryModel.find({}).sort({"seq":-1 }).limit(100000)
       const stairCategory = data.filter(item=> !item.categoryId)
       const secondCategory = data.filter(item=> item.categoryId)
 

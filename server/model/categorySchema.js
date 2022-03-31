@@ -4,6 +4,7 @@ const categorySchema = mongoose.Schema({
     name: String,
     categoryId: String,
     createAt: Number,
+    seq: Number,
     children: [{
         name: String,
         categoryId: String,

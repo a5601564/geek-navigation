@@ -6,7 +6,8 @@ const navSchema = mongoose.Schema({
         name: String,
         href: String,
         desc: String,
-        logo: String
+        logo: String,
+        seq: Number
     }, { collection: 'nav' })
     //这里mongoose.Schema要写上第二个参数，明确指定到数据库中的哪个表取数据
 

@@ -38,6 +38,9 @@
             ></el-option>
           </el-select>
         </el-form-item>
+         <el-form-item label="位置" >
+          <el-input v-model="form.seq" placeholder="位置"></el-input>
+        </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="handleAdd">保存</el-button>
         </el-form-item>
@@ -58,6 +61,7 @@ export default {
       form: {
         name: '',
         categoryId: '',
+        seq: 99,
       },
     }
   },

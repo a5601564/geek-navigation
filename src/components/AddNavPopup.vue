@@ -11,6 +11,9 @@
         <el-form-item label="网站链接" prop="url">
           <el-input placeholder="http://www.baidu.com/" v-model="form.url"  :disabled="type === 'update'" />
         </el-form-item>
+        <el-form-item label="位置" prop="seq" >
+          <el-input placeholder="位置" v-model="form.seq" />
+        </el-form-item>
 
         <el-form-item label="网站分类" prop="categoryId">
           <el-select v-model="form.categoryId" placeholder="请选择">
@@ -33,6 +36,9 @@
         </el-form-item>
         <el-form-item label="网站描述" prop="desc" v-if="isError">
           <el-input placeholder="输入网站描述" v-model="form.desc" />
+        </el-form-item>
+        <el-form-item label="位置" prop="seq" v-if="isError">
+          <el-input placeholder="位置" v-model="form.seq" />
         </el-form-item>
 
         <el-form-item>
@@ -69,6 +75,7 @@ export default {
         categoryId: '',
         name: '',
         desc: '',
+        seq: 0,
       },
       rules: {
         url: [
