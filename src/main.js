@@ -3,7 +3,6 @@ import dayjs from 'dayjs'
 import App from './App.vue'
 import router from "./router"
 import api from "./api"
-import Mock from "./mock"
 import localStorage from "./utils/localStorage"
 const Storage = new localStorage('NAV')
 Vue.config.productionTip = false

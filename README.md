@@ -22,8 +22,8 @@
 ### nginx配置
 nginx.conf中加如下配置，换上你自己ip地址
 ```nginx
-location /api {
-  proxy_pass http://176.122.147.140:3000/api;
+location /api-geek {
+  proxy_pass http://176.122.147.140:3000/api-geek;
   proxy_http_version 1.1;
   proxy_set_header Upgrade $http_upgrade;
   proxy_set_header Connection 'upgrade';

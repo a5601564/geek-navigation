@@ -5,7 +5,7 @@ function resolve(dir) {
     return path.join(__dirname, dir)
 }
 module.exports = {
-    publicPath: '/',
+    publicPath: './',
     productionSourceMap: false,
     chainWebpack: config => {
 
@@ -25,7 +25,7 @@ module.exports = {
     },
     devServer: {
         proxy: {
-            '/api': {
+            '/api-geek': {
                 target: 'http://localhost:3000',
                 changeOrigin: true
             },
