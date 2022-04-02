@@ -13,6 +13,8 @@
       </el-col>
       <el-col :span="4">
         <el-button type="danger" @click="clear">一键拒绝审核列表</el-button>
+        <el-button type="primary" @click="addNewOne">新增网站</el-button>
+        <AddNavPopup :show.sync="dialogFormVisible" :item="editItem" type="update" @submit="getData" />
       </el-col>
     </el-row>
     <el-table :data="tableData" v-loading="loading">
@@ -79,6 +81,7 @@ export default {
       tableData: [],
       tableNavData: [],
       activeName: 'two',
+        dialogFormVisible: false,
     }
   },
   methods: {
@@ -124,6 +127,9 @@ export default {
         this.$api.fastRejectAudit()
         this.getData()
       })
+    },
+    addNewOne() {
+      this.dialogFormVisible = true
     },
   },
   watch: {
