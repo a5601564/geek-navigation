@@ -23,7 +23,7 @@
       </span>
     </el-tree>
 
-    <el-dialog title="提示" :visible.sync="dialogVisible" width="30%">
+    <el-dialog title="提示" :visible.sync="dialogVisible" width="30%"  :close-on-click-modal="false">
       <el-form :model="form" class="demo-form-inline">
         <el-form-item label="分类名称" required>
           <el-input v-model="form.name" placeholder="分类名称"></el-input>

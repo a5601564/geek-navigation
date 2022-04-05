@@ -2,6 +2,7 @@
   <div class="add-nav-warp">
     <!-- 添加网站popup -->
     <el-dialog
+      :close-on-click-modal="false"
       title="添加网站"
       :visible.sync="show"
       width="320"

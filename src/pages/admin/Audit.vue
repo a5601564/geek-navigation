@@ -13,8 +13,9 @@
       </el-col>
       <el-col :span="4">
         <el-button type="danger" @click="clear">一键拒绝审核列表</el-button>
-        <el-button type="primary" @click="addNewOne">新增网站</el-button>
-        <AddNavPopup :show.sync="dialogFormVisible" :item="editItem" type="update" @submit="getData" />
+        <!-- Form -->
+        <el-button type="primary"   @click="dialogFormVisible = true">新增网站</el-button>
+          <AddNavPopup :show.sync="dialogFormVisible" />
       </el-col>
     </el-row>
     <el-table :data="tableData" v-loading="loading">
@@ -65,10 +66,20 @@
 </template>
 
 <script>
+import AddNavPopup from '@/components/AddNavPopup'
+
 export default {
+   components: {
+    AddNavPopup,
+  },
+
   data() {
     return {
+       show: false,
+      editItem: {},
+
       loading: false,
+       dialogFormVisible: false,
       status: [
         { value: 0, label: '审核中' },
         { value: 1, label: '已通过' },
@@ -76,12 +87,13 @@ export default {
       ],
       selectedStatus: 0,
       isNavPopup: false,
-      editItem: {},
       active: 0,
       tableData: [],
       tableNavData: [],
       activeName: 'two',
-        dialogFormVisible: false,
+      form:{
+        
+      }
     }
   },
   methods: {
